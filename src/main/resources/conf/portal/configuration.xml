@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd" xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
-  <component>
-    <key>org.exoplatform.training.TrainingService</key>
-    <type>org.exoplatform.training.TrainingService</type>
-  </component>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd"
+               xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+    <component>
+        <key>org.exoplatform.training.service.TrainingService</key>
+        <type>org.exoplatform.training.service.TrainingServiceImpl</type>
+    </component>
+    <external-component-plugins>
+        <target-component>org.exoplatform.training.service.TrainingService</target-component>
+        <component-plugin>
+            <name>Text transformer to Upper case plugin</name>
+            <set-method>addPlugin</set-method>
+            <type>org.exoplatform.training.service.plugins.UpperCase</type>
+            <description>This plugin transforms text to uppercase and then prints it in Log file</description>
+        </component-plugin>
+    </external-component-plugins>
 </configuration>
