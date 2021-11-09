@@ -8,4 +8,6 @@ import org.picocontainer.Startable;
 
 public interface TrainingService {
   public void addPlugin(TrainingPlugin plugin);
+
+  void printRandomQuote();
 }

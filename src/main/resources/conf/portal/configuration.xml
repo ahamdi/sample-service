@@ -24,4 +24,26 @@
             <description>This listener will log when a plugin do a text transformation</description>
         </component-plugin>
     </external-component-plugins>
+    <external-component-plugins>
+        <target-component>org.exoplatform.services.scheduler.JobSchedulerService</target-component>
+        <component-plugin>
+            <name>QuotePrinterJob</name>
+            <set-method>addPeriodJob</set-method>
+            <type>org.exoplatform.services.scheduler.PeriodJob</type>
+            <description>Job to print random quotes</description>
+            <init-params>
+                <properties-param>
+                    <name>job.info</name>
+                    <description>details of the execution of the Quotes printer job</description>
+                    <property name="jobName" value="QuotePrinter"/>
+                    <property name="groupName" value="QuotePrinters"/>
+                    <property name="job" value="org.exoplatform.training.service.scheduledjobs.PrintQuoteJob"/>
+                    <property name="repeatCount" value="0"/>
+                    <property name="period" value="${exo.dlp.job.period:30000}"/><!-- default 30 seconds -->
+                    <property name="startTime" value="+15000"/><!-- start after 15 seconds delay -->
+                    <property name="endTime" value=""/>
+                </properties-param>
+            </init-params>
+        </component-plugin>
+    </external-component-plugins>
 </configuration>
