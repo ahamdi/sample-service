@@ -1,5 +1,6 @@
 package org.exoplatform.training.service;
 
+import org.exoplatform.services.listener.ListenerService;
 import org.exoplatform.services.log.ExoLogger;
 import org.exoplatform.services.log.Log;
 import org.exoplatform.training.service.plugins.TrainingPlugin;
@@ -13,8 +14,10 @@ public class TrainingServiceImpl implements TrainingService, Startable {
   private static final Log LOG = ExoLogger.getLogger(TrainingServiceImpl.class);
   private final List<TrainingPlugin> plugins = new ArrayList<>();
   private static String TEXT = "Education is learning what you didn’t even know you didn’t know";
+  private final ListenerService listenerService;
 
-  public TrainingServiceImpl() {
+  public TrainingServiceImpl(ListenerService listenerService) {
+    this.listenerService = listenerService;
     LOG.info("Service training created successfully !");
   }
 
@@ -24,7 +27,13 @@ public class TrainingServiceImpl implements TrainingService, Startable {
     LOG.info("Executing plugins");
     for(TrainingPlugin plugin : plugins) {
       LOG.info("Executing first plugin : {}", plugin.getName());
-      LOG.info("############# {} #############", plugin.transform(TEXT));
+      String transformedText = plugin.transform(TEXT);
+      LOG.info("############# {} #############", transformedText);
+      try {
+        listenerService.broadcast("text-transformed", plugin, transformedText);
+      } catch (Exception e) {
+        LOG.error("Could not execute plugin {}", plugin.getName());
+      }
     }
 
   }

@@ -15,4 +15,13 @@
             <description>This plugin transforms text to uppercase and then prints it in Log file</description>
         </component-plugin>
     </external-component-plugins>
+    <external-component-plugins>
+        <target-component>org.exoplatform.services.listener.ListenerService</target-component>
+        <component-plugin>
+            <name>text-transformed</name>
+            <set-method>addListener</set-method>
+            <type>org.exoplatform.training.service.listener.TextTransformListener</type>
+            <description>This listener will log when a plugin do a text transformation</description>
+        </component-plugin>
+    </external-component-plugins>
 </configuration>
