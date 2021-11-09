@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>addons-parent-pom</artifactId>
+        <groupId>org.exoplatform.addons</groupId>
+        <version>15-M02</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>org.exoplatform.training</groupId>
+    <artifactId>training-services</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <org.exoplatform.social.version>6.3.x-SNAPSHOT</org.exoplatform.social.version>
+    </properties>
+
+    <dependencies>
+        <!-- Import versions from platform project -->
+        <dependency>
+            <groupId>org.exoplatform.social</groupId>
+            <artifactId>social</artifactId>
+            <version>${org.exoplatform.social.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.exoplatform.kernel</groupId>
+            <artifactId>exo.kernel.commons</artifactId>
+            <version>${org.exoplatform.social.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.exoplatform.kernel</groupId>
+            <artifactId>exo.kernel.container</artifactId>
+            <version>${org.exoplatform.social.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>

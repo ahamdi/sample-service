@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../meeds/packaging/plf-assemblies/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../meeds/packaging/plf-packaging-resources/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../meeds/packaging/plf-tomcat-resources/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../meeds/services/plf-community-edition-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../meeds/services/plf-community-edition-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../meeds/services/plf-configuration/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../meeds/services/plf-exo-tools/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../meeds/services/plf-tomcat-pc-creator-listener/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../meeds/services/plf-tomcat-pc-creator-listener/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../meeds/webapps/plf-meeds-extension/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
